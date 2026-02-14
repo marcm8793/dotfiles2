@@ -1,0 +1,18 @@
+[
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "cmd+shift+o",
+    "command": "workbench.action.toggleMaximizedPanel"
+  }
+]

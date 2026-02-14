@@ -1,0 +1,32 @@
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+
+[color "branch"]
+  current = green
+  remote = yellow
+
+[core]
+  pager = less -FRSX
+  editor = code --wait
+
+[help]
+  autocorrect = 1
+
+[push]
+  default = simple
+
+[branch "master"]
+  mergeoptions = --no-edit
+
+[pull]
+  rebase = false
+
+[init]
+	defaultBranch = master
+[user]
+	email = marcm9387@gmail.com
+	name = Marc Mansour
