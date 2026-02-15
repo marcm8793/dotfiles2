@@ -46,8 +46,5 @@ export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR=code
 export EDITOR=code
 
-# Python debugger
-export PYTHONBREAKPOINT=ipdb.set_trace
-
 # Zoxide
 eval "$(zoxide init zsh)"
