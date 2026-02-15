@@ -36,7 +36,7 @@ type -a nvm > /dev/null && add-zsh-hook chpwd load-nvmrc
 type -a nvm > /dev/null && load-nvmrc
 
 # PATH
-export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
+export PATH="$HOME/.local/bin:./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 
 # Encoding
 export LANG=en_US.UTF-8
