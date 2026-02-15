@@ -9,7 +9,8 @@
 # WHAT IT DOES:
 # - Backs up your existing ~/.gitconfig and ~/.zshrc (if they exist)
 # - Symlinks gitconfig and zshrc from this repo to your home directory
-# - Installs zsh-autosuggestions and zsh-syntax-highlighting plugins
+# - Installs zsh-syntax-highlighting, zsh-autosuggestions, and history-substring-search plugins
+# - Installs zoxide (via brew on macOS, curl on Linux)
 # - Symlinks keybindings.json to your VS Code config folder
 # - Reloads your terminal
 
@@ -43,16 +44,33 @@ for name in gitconfig zshrc; do
   fi
 done
 
-# Install zsh-syntax-highlighting plugin
+# Install zsh plugins
 CURRENT_DIR=`pwd`
 ZSH_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
 mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR"
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
   echo "-----> Installing zsh plugin 'zsh-syntax-highlighting'..."
-  git clone https://github.com/zsh-users/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting
 fi
+if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
+  echo "-----> Installing zsh plugin 'zsh-autosuggestions'..."
+  git clone https://github.com/zsh-users/zsh-autosuggestions
+fi
+if [ ! -d "$ZSH_PLUGINS_DIR/zsh-history-substring-search" ]; then
+  echo "-----> Installing zsh plugin 'zsh-history-substring-search'..."
+  git clone https://github.com/zsh-users/zsh-history-substring-search
+fi
 cd "$CURRENT_DIR"
+
+# Install zoxide
+if ! command -v zoxide &> /dev/null; then
+  echo "-----> Installing zoxide..."
+  if [[ `uname` =~ "Darwin" ]]; then
+    brew install zoxide
+  else
+    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+  fi
+fi
 
 # Symlink VS Code keybindings.json
 # If it's a macOS
