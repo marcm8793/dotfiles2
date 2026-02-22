@@ -37,6 +37,7 @@ type -a nvm > /dev/null && load-nvmrc
 
 # PATH
 export PATH="$HOME/.local/bin:./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
+export PATH="$PATH:$HOME/bin"
 
 # Encoding
 export LANG=en_US.UTF-8
@@ -48,3 +49,9 @@ export EDITOR=code
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# opencode
+export PATH=/home/marc/.opencode/bin:$PATH
+
+# forward COLORTERM over SSH
+export COLORTERM=truecolor
