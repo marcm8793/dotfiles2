@@ -55,3 +55,6 @@ export PATH=/home/marc/.opencode/bin:$PATH
 
 # forward COLORTERM over SSH
 export COLORTERM=truecolor
+
+# OpenClaw Completion
+source "/home/marc/.openclaw/completions/openclaw.zsh"

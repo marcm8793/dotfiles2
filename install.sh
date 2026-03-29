@@ -72,6 +72,11 @@ if ! command -v zoxide &> /dev/null; then
   fi
 fi
 
+# Symlink Claude Code statusline
+target="$HOME/.claude/statusline.sh"
+backup $target
+symlink $PWD/claude/statusline.sh $target
+
 # Symlink VS Code keybindings.json
 # If it's a macOS
 if [[ `uname` =~ "Darwin" ]]; then

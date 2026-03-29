@@ -36,3 +36,6 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
+[includeIf "gitdir:~/.openclaw/workspace/"]
+    path = ~/.gitconfig-marcos
